@@ -148,7 +148,8 @@ class VRPDataset(Dataset):
                     'loc': torch.FloatTensor(size, 2).uniform_(0, 1),
                     # Uniform 1 - 9, scaled by capacities
                     'demand': (torch.FloatTensor(size).uniform_(0, 9).int() + 1).float() / CAPACITIES[size],
-                    'depot': torch.FloatTensor(2).uniform_(0, 1)
+                    'depot': torch.FloatTensor(2).uniform_(0, 1),
+                    'capacity': CAPACITIES[size]
                 }
 
                 for i in range(num_samples)
